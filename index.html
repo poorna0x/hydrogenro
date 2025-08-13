@@ -20,10 +20,10 @@
       color: #000; /* Default light text */
     }
 
-    /* Dark mode styles */
+    /* Full dark mode styles */
     @media (prefers-color-scheme: dark) {
       body {
-        background: #1a1a1a;
+        background: #000;
         color: #fff;
       }
     }
@@ -145,14 +145,12 @@
 
     @media (prefers-color-scheme: dark) {
       h2 {
-        color: #ccc;
+        color: #fff;
       }
     }
 
     p {
-      font-size: 1rem
-
-;
+      font-size: 1rem;
       max-width: 320px;
       margin: 0 auto 2rem auto;
       line-height: 1.5;
@@ -162,7 +160,7 @@
 
     @media (prefers-color-scheme: dark) {
       p {
-        color: #aaa;
+        color: #ccc;
       }
     }
 
@@ -198,8 +196,8 @@
     @media (prefers-color-scheme: dark) {
       .phone, .whatsapp-btn {
         color: #fff;
-        border: 1px solid #444;
-        background: #333;
+        border: 1px solid #555;
+        background: #222;
         box-shadow: 0 2px 4px rgba(255,255,255,0.05);
       }
     }
@@ -207,12 +205,12 @@
     /* Hover animation */
     .phone:hover, .whatsapp-btn:hover {
       transform: translateY(-2px);
-      box-shadow:  Ravenscar, North Yorkshire0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     @media (prefers-color-scheme: dark) {
       .phone:hover, .whatsapp-btn:hover {
-        box-shadow: 0 4px 10px rgba(255,255,255,0.的应用);
+        box-shadow: 0 4px 10px rgba(255,255,255,0.1);
       }
     }
 
@@ -223,6 +221,13 @@
     .whatsapp-icon {
       width: 18px;
       height: 18px;
+      filter: brightness(1); /* Ensure icon visibility in light mode */
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .whatsapp-icon {
+        filter: brightness(1.5); /* Slightly brighter for dark mode */
+      }
     }
 
     @media (max-width: 480px) {
@@ -255,8 +260,8 @@
           -45deg,
           #fff,
           #fff 10px,
-          #ccc 10px,
-          #ccc 20px
+          #555 10px,
+          #555 20px
         );
       }
     }
@@ -281,7 +286,7 @@
   <div class="contact">
     <a href="tel:9886944288" class="phone">
       <span class="phone-icon">📞</span>
-      <span>(988) 694-4288 </span>
+      <span>(988) 694-4288</span>
     </a>
 
     <a href="https://wa.me/919606544288?text=Hi" class="whatsapp-btn" target="_blank">
