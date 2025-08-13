@@ -11,13 +11,21 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background: #fff;
-      color: #000;
       text-align: center;
       padding: 1rem;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      background: #fff; /* Default light background */
+      color: #000; /* Default light text */
+    }
+
+    /* Dark mode styles */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #1a1a1a;
+        color: #fff;
+      }
     }
 
     /* Header area */
@@ -58,6 +66,13 @@
       background-size: 200% 100%;
       animation: underlineMove 2s linear infinite;
       border-radius: 1px;
+    }
+
+    /* Dark mode underline */
+    @media (prefers-color-scheme: dark) {
+      p.animated-underline::after {
+        background: linear-gradient(90deg, transparent, #fff, transparent);
+      }
     }
 
     /* Animation for h1 */
@@ -128,13 +143,27 @@
       color: #333;
     }
 
+    @media (prefers-color-scheme: dark) {
+      h2 {
+        color: #ccc;
+      }
+    }
+
     p {
-      font-size: 1rem;
+      font-size: 1rem
+
+;
       max-width: 320px;
       margin: 0 auto 2rem auto;
       line-height: 1.5;
       color: #555;
       position: relative; /* Needed for the underline effect */
+    }
+
+    @media (prefers-color-scheme: dark) {
+      p {
+        color: #aaa;
+      }
     }
 
     p.animated-underline {
@@ -166,10 +195,25 @@
       transition: all 0.25s ease;
     }
 
+    @media (prefers-color-scheme: dark) {
+      .phone, .whatsapp-btn {
+        color: #fff;
+        border: 1px solid #444;
+        background: #333;
+        box-shadow: 0 2px 4px rgba(255,255,255,0.05);
+      }
+    }
+
     /* Hover animation */
     .phone:hover, .whatsapp-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow:  Ravenscar, North Yorkshire0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .phone:hover, .whatsapp-btn:hover {
+        box-shadow: 0 4px 10px rgba(255,255,255,0.的应用);
+      }
     }
 
     .phone-icon {
@@ -205,6 +249,18 @@
       animation: ribbonMove 2s linear infinite;
     }
 
+    @media (prefers-color-scheme: dark) {
+      footer {
+        background: repeating-linear-gradient(
+          -45deg,
+          #fff,
+          #fff 10px,
+          #ccc 10px,
+          #ccc 20px
+        );
+      }
+    }
+
     @keyframes ribbonMove {
       from { background-position: 0 0; }
       to { background-position: 40px 0; }
@@ -225,7 +281,7 @@
   <div class="contact">
     <a href="tel:9886944288" class="phone">
       <span class="phone-icon">📞</span>
-      <span>(988) 694-4288</span>
+      <span>(988) 694-4288 </span>
     </a>
 
     <a href="https://wa.me/919606544288?text=Hi" class="whatsapp-btn" target="_blank">
@@ -234,7 +290,7 @@
     </a>
   </div>
 
-  <!-- Minimal moving black ribbon -->
+  <!-- Minimal moving ribbon -->
   <footer></footer>
 </body>
 </html>
