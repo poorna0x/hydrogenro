@@ -35,6 +35,9 @@
       align-items: center;
       gap: 0.5rem;
       padding-bottom: 0.3rem;
+      -webkit-animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite;
+      animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite;
+      animation-delay: 1.8s; /* 1.2s animation + 1.8s delay = 3s cycle */
     }
 
     /* 'RO' part balanced with Hydrogen */
@@ -43,8 +46,8 @@
       font-weight: 600; /* Matched with Hydrogen */
     }
 
-    /* Animated underline */
-    h1::after {
+    /* Animated underline for the new paragraph */
+    p.animated-underline::after {
       content: "";
       position: absolute;
       left: 50%;
@@ -56,6 +59,31 @@
       background-size: 200% 100%;
       animation: underlineMove 2s linear infinite;
       border-radius: 1px;
+    }
+
+    @-webkit-keyframes tracking-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes tracking-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 1;
+      }
     }
 
     @keyframes underlineMove {
@@ -76,6 +104,7 @@
       margin: 0 auto 2rem auto;
       line-height: 1.5;
       color: #555;
+      position: relative; /* Needed for the underline effect */
     }
 
     .contact {
@@ -138,7 +167,7 @@
         #222 20px
       );
       background-size: 40px 40px;
-      animation: ribbonMove 2s linear infinite;
+      animation: ribbonMove 5s linear infinite;
     }
 
     @keyframes ribbonMove {
@@ -156,6 +185,7 @@
 
   <h2>RO Filter Service</h2>
   <p>Professional reverse osmosis filter service.</p>
+  <p class="animated-underline">Prompt service, no bullshi*t! 😎</p>
 
   <div class="contact">
     <a href="tel:9886944288" class="phone">
