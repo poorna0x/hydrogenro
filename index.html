@@ -35,8 +35,8 @@
       align-items: center;
       gap: 0.5rem;
       padding-bottom: 0.3rem;
-      -webkit-animation: tracking-in-expand 4.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite 2s;
-      animation: tracking-in-expand 4.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite 2s;
+      -webkit-animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s forwards;
+      animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s forwards;
     }
 
     /* 'RO' part balanced with Hydrogen */
@@ -45,7 +45,7 @@
       font-weight: 600; /* Matched with Hydrogen */
     }
 
-    /* Animated underline for the new paragraph */
+    /* Animated underline for the paragraph */
     p.animated-underline::after {
       content: "";
       position: absolute;
@@ -60,16 +60,14 @@
       border-radius: 1px;
     }
 
+    /* Animation for h1 */
     @-webkit-keyframes tracking-in-expand {
       0% {
         letter-spacing: -0.5em;
         opacity: 0;
       }
-      9.52% { /* 0.4s / 4.2s */
+      40% {
         opacity: 0.6;
-      }
-      28.57% { /* 1.2s / 4.2s */
-        opacity: 1;
       }
       100% {
         letter-spacing: normal;
@@ -81,11 +79,36 @@
         letter-spacing: -0.5em;
         opacity: 0;
       }
-      9.52% { /* 0.4s / 4.2s */
+      40% {
         opacity: 0.6;
       }
-      28.57% { /* 1.2s / 4.2s */
+      100% {
+        letter-spacing: normal;
         opacity: 1;
+      }
+    }
+
+    /* Animation for paragraph */
+    @-webkit-keyframes tracking-in-expand-p {
+      0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        letter-spacing: normal;
+        opacity: 1;
+      }
+    }
+    @keyframes tracking-in-expand-p {
+      0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
       }
       100% {
         letter-spacing: normal;
@@ -112,6 +135,11 @@
       line-height: 1.5;
       color: #555;
       position: relative; /* Needed for the underline effect */
+    }
+
+    p.animated-underline {
+      -webkit-animation: tracking-in-expand-p 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s forwards;
+      animation: tracking-in-expand-p 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s forwards;
     }
 
     .contact {
@@ -192,7 +220,7 @@
 
   <h2>RO Filter Service</h2>
   <p>Professional reverse osmosis filter service.</p>
-  <p class="animated-underline">Prompt service, no bullshi*t <br>like this website 😎!</p>
+  <p class="animated-underline">Prompt service, no bullshi*t! 😎</p>
 
   <div class="contact">
     <a href="tel:9886944288" class="phone">
