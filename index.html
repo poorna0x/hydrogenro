@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hydrogen RO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="hydrogen-ro.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&family=Roboto:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -12,48 +13,67 @@
       padding: 0;
       background: #fff;
       color: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       text-align: center;
       padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header area */
+    header {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     h1 {
       font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
+      font-weight: 300; /* Lighter weight for 'Hydrogen' */
+      margin: 0;
       position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       padding-bottom: 0.3rem;
     }
 
-    /* Minimal underline */
+    /* 'RO' part balanced with Hydrogen */
+    .ro-text {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 600; /* Matched with Hydrogen */
+    }
+
+    /* Animated underline */
     h1::after {
       content: "";
       position: absolute;
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
-      width: 60px;
-      height: 2px;
-      background-color: #000;
+      width: 105%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, #000, transparent);
+      background-size: 200% 100%;
+      animation: underlineMove 2s linear infinite;
       border-radius: 1px;
+    }
+
+    @keyframes underlineMove {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
 
     h2 {
       font-size: 1.2rem;
       font-weight: 400;
-      margin-top: 0.4rem;
-      margin-bottom: 1rem;
+      margin: 0.4rem 0 1rem 0;
       color: #333;
     }
 
     p {
       font-size: 1rem;
       max-width: 320px;
-      margin: 0 auto 3rem auto;
+      margin: 0 auto 2rem auto;
       line-height: 1.5;
       color: #555;
     }
@@ -105,25 +125,51 @@
         font-size: 0.95rem;
       }
     }
+
+    /* Footer ribbon animation */
+    footer {
+      margin-top: auto;
+      height: 25px;
+      background: repeating-linear-gradient(
+        -45deg,
+        black,
+        black 10px,
+        #222 10px,
+        #222 20px
+      );
+      background-size: 40px 40px;
+      animation: ribbonMove 2s linear infinite;
+    }
+
+    @keyframes ribbonMove {
+      from { background-position: 0 0; }
+      to { background-position: 40px 0; }
+    }
   </style>
 </head>
 <body>
-  <h1>HYDROGEN RO</h1>
+  <header>
+    <h1>
+      Hydrogen RO <span class="ro-text"></span>
+    </h1>
+  </header>
+
   <h2>RO Filter Service</h2>
   <p>Professional reverse osmosis filter service.</p>
 
   <div class="contact">
-    <!-- Clickable Phone -->
     <a href="tel:9886944288" class="phone">
       <span class="phone-icon">📞</span>
       <span>(988) 694-4288</span>
     </a>
 
-    <!-- Clickable WhatsApp -->
     <a href="https://wa.me/919606544288?text=Hi" class="whatsapp-btn" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
       WhatsApp
     </a>
   </div>
+
+  <!-- Minimal moving black ribbon -->
+  <footer></footer>
 </body>
 </html>
