@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hydrogen RO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      position: relative;
+      padding-bottom: 0.3rem;
+    }
+
+    /* Minimal underline */
+    h1::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background-color: #000;
+      border-radius: 1px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-top: 0.4rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 320px;
+      margin: 0 auto 3rem auto;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Button styles */
+    .phone, .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 0.5rem 0.9rem;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: all 0.25s ease;
+    }
+
+    /* Hover animation */
+    .phone:hover, .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .phone-icon {
+      font-size: 1.1rem;
+    }
+
+    .whatsapp-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>HYDROGEN RO</h1>
+  <h2>RO Filter Service</h2>
+  <p>Professional reverse osmosis filter service.</p>
+
+  <div class="contact">
+    <!-- Clickable Phone -->
+    <a href="tel:9886944288" class="phone">
+      <span class="phone-icon">📞</span>
+      <span>(988) 694-4288</span>
+    </a>
+
+    <!-- Clickable WhatsApp -->
+    <a href="https://wa.me/919606544288?text=Hi" class="whatsapp-btn" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+      WhatsApp
+    </a>
+  </div>
+</body>
+</html>
