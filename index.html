@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +7,10 @@
   <!-- Standard favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="hydrogen-ro.png">
   <link rel="icon" type="image/png" sizes="16x16" href="hydrogen-ro.png">
-
   <!-- Android/Chrome high-res icons -->
   <link rel="icon" type="image/png" sizes="192x192" href="hydrogen-ro.png">
   <link rel="icon" type="image/png" sizes="512x512" href="hydrogen-ro.png">
-<!-- iOS home screen icon -->
+  <!-- iOS home screen icon -->
   <link rel="apple-touch-icon" href="hydrogen-ro.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&family=Roboto:wght@600&display=swap" rel="stylesheet">
@@ -20,51 +18,34 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
-      text-align: center;
       padding: 1rem;
+      text-align: center;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      background: #fff; /* Default light background */
-      color: #000; /* Default light text */
+      background: #fff; /* Default light */
+      color: #000;
       box-sizing: border-box;
     }
 
-    /* Full dark mode styles */
     @media (prefers-color-scheme: dark) {
-      body {
-        background: #000;
-        color: #fff;
-      }
+      body { background: #000; color: #fff; }
     }
 
-    /* Header area */
-    header {
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-    }
+    header { margin-top: 1rem; margin-bottom: 0.5rem; }
 
     h1 {
       font-size: 2.2rem;
-      font-weight: 300; /* Lighter weight for 'Hydrogen' */
+      font-weight: 300;
       margin: 0;
-      position: relative;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       padding-bottom: 0.3rem;
-      -webkit-animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s forwards;
-      animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s forwards;
+      animation: tracking-in-expand 1.2s cubic-bezier(0.215,0.610,0.355,1.000) 2s forwards;
     }
+    .ro-text { font-family: 'Roboto', sans-serif; font-weight: 600; }
 
-    /* 'RO' part balanced with Hydrogen */
-    .ro-text {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 600; /* Matched with Hydrogen */
-    }
-
-    /* Animated underline for the paragraph */
     p.animated-underline::after {
       content: "";
       position: absolute;
@@ -78,87 +59,27 @@
       animation: underlineMove 2s linear infinite;
       border-radius: 1px;
     }
-
-    /* Dark mode underline */
     @media (prefers-color-scheme: dark) {
-      p.animated-underline::after {
-        background: linear-gradient(90deg, transparent, #fff, transparent);
-      }
+      p.animated-underline::after { background: linear-gradient(90deg, transparent, #fff, transparent); }
     }
 
-    /* Animation for h1 */
-    @-webkit-keyframes tracking-in-expand {
-      0% {
-        letter-spacing: -0.5em;
-        opacity: 0;
-      }
-      40% {
-        opacity: 0.6;
-      }
-      100% {
-        letter-spacing: normal;
-        opacity: 1;
-      }
-    }
     @keyframes tracking-in-expand {
-      0% {
-        letter-spacing: -0.5em;
-        opacity: 0;
-      }
-      40% {
-        opacity: 0.6;
-      }
-      100% {
-        letter-spacing: normal;
-        opacity: 1;
-      }
-    }
-
-    /* Animation for paragraph */
-    @-webkit-keyframes tracking-in-expand-p {
-      0% {
-        letter-spacing: -0.5em;
-        opacity: 0;
-      }
-      40% {
-        opacity: 0.6;
-      }
-      100% {
-        letter-spacing: normal;
-        opacity: 1;
-      }
+      0% { letter-spacing: -0.5em; opacity: 0; }
+      40% { opacity: 0.6; }
+      100% { letter-spacing: normal; opacity: 1; }
     }
     @keyframes tracking-in-expand-p {
-      0% {
-        letter-spacing: -0.5em;
-        opacity: 0;
-      }
-      40% {
-        opacity: 0.6;
-      }
-      100% {
-        letter-spacing: normal;
-        opacity: 1;
-      }
+      0% { letter-spacing: -0.5em; opacity: 0; }
+      40% { opacity: 0.6; }
+      100% { letter-spacing: normal; opacity: 1; }
     }
-
     @keyframes underlineMove {
       0% { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
 
-    h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin: 0.4rem 0 1rem 0;
-      color: #333;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      h2 {
-        color: #fff;
-      }
-    }
+    h2 { font-size: 1.2rem; font-weight: 400; margin: 0.4rem 0 1rem 0; color: #333; }
+    @media (prefers-color-scheme: dark) { h2 { color: #fff; } }
 
     p {
       font-size: 1rem;
@@ -166,45 +87,39 @@
       margin: 0 auto 2rem auto;
       line-height: 1.5;
       color: #555;
-      position: relative; /* Needed for the underline effect */
+      position: relative;
     }
-
-    @media (prefers-color-scheme: dark) {
-      p {
-        color: #ccc;
-      }
-    }
-
+    @media (prefers-color-scheme: dark) { p { color: #ccc; } }
     p.animated-underline {
-      -webkit-animation: tracking-in-expand-p 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s forwards;
-      animation: tracking-in-expand-p 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s forwards;
+      animation: tracking-in-expand-p 1.2s cubic-bezier(0.215,0.610,0.355,1.000) 2s forwards;
     }
 
+    /* -------- Contact buttons (updated mobile-first) -------- */
     .contact {
       display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      flex-wrap: nowrap;
       justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: nowrap;
     }
 
-    /* Button styles */
     .phone, .whatsapp-btn {
+      flex: 1 1 auto;
+      max-width: 160px;
+      height: 44px;
       display: flex;
       align-items: center;
-      justify-content: center; /* Center content horizontally */
+      justify-content: center;
       gap: 0.5rem;
       font-size: 0.95rem;
       text-decoration: none;
       color: #000;
       border: 1px solid #ddd;
       border-radius: 6px;
-      padding: 0.5rem 0.9rem;
+      padding: 0 0.9rem;
       background: #fff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       transition: all 0.25s ease;
-      min-width: 160px; /* Set a minimum width for consistency */
-      height: 40px; /* Fixed height for consistency */
     }
 
     @media (prefers-color-scheme: dark) {
@@ -215,81 +130,58 @@
         box-shadow: 0 2px 4px rgba(255,255,255,0.05);
       }
     }
-
-    /* Hover animation */
     .phone:hover, .whatsapp-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-
     @media (prefers-color-scheme: dark) {
-      .phone:hover, .whatsapp-btn:hover {
-        box-shadow: 0 4px 10px rgba(255,255,255,0.1);
-      }
+      .phone:hover, .whatsapp-btn:hover { box-shadow: 0 4px 10px rgba(255,255,255,0.1); }
     }
 
-    .phone-icon {
-      font-size: 1.3rem; /* Increase size to better match WhatsApp icon height */
-    }
-
+    .phone-icon { font-size: 1.2rem; }
     .whatsapp-icon {
-      width: 27px; /* Slightly larger for better visual balance */
-      height: 27px; /* Make square for consistency */
-      filter: brightness(1); /* Ensure icon visibility in light mode */
+      width: 24px;
+      height: 24px;
+      filter: brightness(1);
+    }
+    @media (prefers-color-scheme: dark) {
+      .whatsapp-icon { filter: brightness(1.5); }
     }
 
-    @media (prefers-color-scheme: dark) {
-      .whatsapp-icon {
-        filter: brightness(1.5); /* Slightly brighter for dark mode */
+    @media (max-width: 380px) {
+      .phone, .whatsapp-btn {
+        font-size: 0.85rem;
+        gap: 0.4rem;
+        padding: 0 0.6rem;
+        max-width: 140px;
       }
+      .whatsapp-icon { width: 22px; height: 22px; }
     }
 
     @media (max-width: 480px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-      p {
-        font-size: 0.95rem;
-      }
+      h1 { font-size: 1.8rem; }
+      p { font-size: 0.95rem; }
     }
-
-
-    @media (prefers-color-scheme: dark) {
-      footer {
-        background: repeating-linear-gradient(
-          -45deg,
-          #fff,
-          #fff 10px,
-          #555 10px,
-          #555 20px
-        );
-      }
-    }
-
   </style>
 </head>
 <body>
   <header>
-    <h1>
-      Hydrogen RO <span class="ro-text"></span>
-    </h1>
+    <h1>Hydrogen RO <span class="ro-text"></span></h1>
   </header>
 
   <h2>RO Filter Service</h2>
   <p>Professional reverse osmosis filter service.</p>
-  <p class="animated-underline">Prompt service, no bullsh!t, <br>  like this website 😎</p>
+  <p class="animated-underline">Prompt service, no bullsh!t, <br> like this website 😎</p>
 
   <div class="contact">
     <a href="tel:9886944288" class="phone">
       <span class="phone-icon">📞</span>
       <span>(988) 694-4288</span>
     </a>
-
-    <a href="https://wa.me/919606544288?text=Hi, Looking for RO Filter Service" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/919606544288?text=Hi, Looking for RO Filter Servicfe" class="whatsapp-btn" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
       WhatsApp
     </a>
   </div>
-
 </body>
 </html>
