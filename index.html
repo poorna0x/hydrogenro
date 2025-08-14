@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -183,7 +184,7 @@
       display: flex;
       align-items: center;
       gap: 1.2rem;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: center;
     }
 
@@ -191,6 +192,7 @@
     .phone, .whatsapp-btn {
       display: flex;
       align-items: center;
+      justify-content: center; /* Center content horizontally */
       gap: 0.5rem;
       font-size: 0.95rem;
       text-decoration: none;
@@ -201,6 +203,8 @@
       background: #fff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       transition: all 0.25s ease;
+      min-width: 160px; /* Set a minimum width for consistency */
+      height: 40px; /* Fixed height for consistency */
     }
 
     @media (prefers-color-scheme: dark) {
@@ -225,12 +229,12 @@
     }
 
     .phone-icon {
-      font-size: 1rem;
+      font-size: 1.3rem; /* Increase size to better match WhatsApp icon height */
     }
 
     .whatsapp-icon {
-      width: 16px;
-      height: 21px;
+      width: 27px; /* Slightly larger for better visual balance */
+      height: 27px; /* Make square for consistency */
       filter: brightness(1); /* Ensure icon visibility in light mode */
     }
 
@@ -249,20 +253,6 @@
       }
     }
 
-    /* Footer ribbon animation */
-    footer {
-      margin-top: auto;
-      height: 25px;
-      background: repeating-linear-gradient(
-        -45deg,
-        black,
-        black 10px,
-        #222 10px,
-        #222 20px
-      );
-      background-size: 40px 40px;
-      animation: ribbonMove 2s linear infinite;
-    }
 
     @media (prefers-color-scheme: dark) {
       footer {
@@ -276,10 +266,6 @@
       }
     }
 
-    @keyframes ribbonMove {
-      from { background-position: 0 0; }
-      to { background-position: 40px 0; }
-    }
   </style>
 </head>
 <body>
