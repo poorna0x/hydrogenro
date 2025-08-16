@@ -1,0 +1,58 @@
+body { font-family: 'Poppins', sans-serif; background: #f4f6f9; padding: 10px; }
+.form-section { background: white; padding: 15px; border-radius: 8px; margin-bottom:15px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+.form-section input, .form-section select { padding:8px; margin:6px 0;
+  border:1px solid #ddd; border-radius:4px; font-size:14px;
+}
+#items { margin-bottom:10px; }
+.item-row { display:flex; gap:5px; margin-bottom:5px; align-items:center; }
+.form-section .item-row input { flex:1 1 100% !important; max-width:100% !important; }
+.remove-btn { background:red; color:white; border:none; border-radius:4px;
+  padding:4px 8px; cursor:pointer;
+}
+.add-btn { background:#38bdf8; color:white; border:none; padding:8px 12px;
+  margin-top:5px; border-radius:4px; cursor:pointer; font-size:14px;
+}
+.add-additional-btn { background:#f97316; margin-left:8px; }
+
+@keyframes pulse {
+  0% { box-shadow:0 0 0 0 rgba(8, 68, 111, 0.7); }
+  70% { box-shadow:0 0 10px 10px rgba(15, 110, 193, 0); }
+  100% { box-shadow:0 0 0 0 rgba(11, 147, 215, 0); }
+}
+.btn { display:block; width:100%; padding:10px; background:#0d9488; color:white;
+  border:none; margin-top:10px; border-radius:4px; font-size:16px;
+  transition:background-color 0.3s ease; animation:pulse 2s infinite; cursor:pointer;
+}
+.btn:hover { background:#115e59; animation:none; }
+.invoice-box { background:white; max-width:800px; margin:auto; padding:20px;
+  border:1px solid #ddd;
+}
+.header { position:relative; text-align:center; border-bottom:4px solid #38bdf8;
+  padding-bottom:10px;
+}
+.company-name { font-size:24px; font-weight:700; color:#38bdf8; }
+.gst { position:absolute; right:0; top:0; font-size:13px; color:#555; }
+.address { text-align:center; font-size:12px; color:#555; margin:8px 0; }
+.contact { border-top:2px solid #e5e7eb; border-bottom:2px solid #e5e7eb;
+  padding:8px 0; font-size:12px; display:flex; flex-wrap:wrap; justify-content:space-around;
+}
+.contact i { color:#38bdf8; margin-right:4px; }
+.invoice-title { text-align:center; font-size:18px; font-weight:600;
+  color:#38bdf8; margin-top:15px;
+}
+.invoice-details { font-size:12px; display:flex; justify-content:space-between; }
+table { width:100%; border-collapse:collapse; margin-top:10px; }
+table th, table td { border:1px solid #ddd; padding:6px; font-size:12px;
+  text-align:center;
+}
+table thead { background:#38bdf8; color:white; }
+.totals { width:250px; margin-left:auto; font-size:13px; margin-top:10px; }
+.totals div { display:flex; justify-content:space-between; padding:4px;
+  border:1px solid #ddd;
+}
+.grand-total { font-weight:700; font-size:14px; color:#38bdf8; }
+.footer { text-align:center; font-size:12px; color:#777; margin-top:20px; }
+
+

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Hydrogen RO Invoice</title>
+
+  <link rel="icon" type="image/x-icon" href="icons/icon-192.png">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="form-section">
+    <input style="width:100%;" type="text" id="customerName" placeholder="Customer Name (optional)">
+    <br>
+    <input style="width:100%;" type="text" id="customerPhone" placeholder="Customer Phone (optional)">
+
+    <div id="items">
+      <div class="item-row" data-type="item">
+        <input type="text" placeholder="Item Name" class="item-name" required>
+        <input type="text" placeholder="Qty" class="qty" value="">
+        <input type="text" placeholder="Rate" class="rate" value="">
+        <button type="button" class="remove-btn" onclick="removeItem(this)">x</button>
+      </div>
+    </div>
+
+    <button type="button" class="add-btn" onclick="addItem()">+ Add Item</button>
+    <button type="button" class="add-btn add-additional-btn" onclick="addAdditional()">+ Add Additional Charge</button>
+    <br>
+
+    <input type="number" id="discountValue" placeholder="Discount Value (optional)" min="0" step="1" style="margin-top:15px;" value="">
+    <select id="discountType">
+      <option value="amount">₹ Amount</option>
+      <option value="percent">% Percent</option>
+    </select>
+
+    <button class="btn" onclick="generatePDF()">Generate PDF</button>
+  </div>
+
+  <div class="invoice-box" id="invoice">
+    <div class="header">
+      <div class="company-name">HYDROGEN RO</div>
+      <div class="gst">GST: 29LJIPS5140P1Z6</div>
+    </div>
+    <div class="address">
+      Ground Floor, Flat No. 13, 4th Main Road, Next To Jain Temple, Seshadripuram, Kumara Park West,<br>
+      Bengaluru Urban, Karnataka, 560020
+    </div>
+    <div class="contact">
+      <div><i class="ri-phone-fill"></i> 9886944288 | 9606544288</div>
+      <div><i class="ri-mail-fill"></i> hi@hydrogenro.com</div>
+      <div><i class="ri-global-line"></i> www.hydrogenro.com</div>
+    </div>
+
+
+    <div class="invoice-title">BILL</div>
+    <div class="invoice-details">
+      <div id="billTo" style="white-space: pre;"></div>
+      <div id="billDate"></div>
+    </div>
+
+    <table id="itemsTable">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Qty</th>
+          <th>Rate</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="totals">
+      <div><span>Subtotal</span> <span id="subtotal"></span></div>
+      <div id="discountRow" style="display:none;"><span>Discount</span> <span id="discountAmount"></span></div>
+      <div class="grand-total"><span>Grand Total</span> <span id="grandTotal"></span></div>
+    </div>
+
+    <div class="footer">Thank you for your business!</div>
+  </div>
+
+</body>
+</html>
